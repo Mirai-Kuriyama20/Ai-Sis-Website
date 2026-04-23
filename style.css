@@ -271,7 +271,10 @@ a {
 
 .text-carousel-track {
     display: inline-flex;
-    animation: text-scroll 12s linear infinite;
+    animation: text-scroll 20s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .text-carousel-track img {
@@ -281,14 +284,16 @@ a {
     border-radius: 15px;
     margin: 0 25px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 @keyframes text-scroll {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
